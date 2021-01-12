@@ -7,35 +7,35 @@ public class Task1and2 {
         System.out.println("Введите числа");
         Scanner in = new Scanner(System.in);
         String numbers = in.nextLine();
-        String [] values = numbers.split(" ");
-        Double [] values1 = new Double[values.length];
-        for(int i=0;i<values.length;i++){
-            values1[i]=Double.parseDouble(values[i]);
+        String [] valuesString = numbers.split(" ");
+        Double [] valuesDouble = new Double[valuesString.length];
+        for(int i=0;i<valuesString.length;i++){
+            valuesDouble[i]=Double.parseDouble(valuesString[i]);
         }
-        double max=values1[0];
-        double min=values1[0];
-        for(int i = 0;i<(values.length-1);i++){
-            if(values1[i]>max){
-                max=values1[i];
+        double max=valuesDouble[0];
+        double min=valuesDouble[0];
+        for(int i = 0;i<(valuesString.length-1);i++){
+            if(valuesDouble[i]>max){
+                max=valuesDouble[i];
             }
-            if(values1[i]<min){
-                min=values1[i];
+            if(valuesDouble[i]<min){
+                min=valuesDouble[i];
             }
         }
         System.out.println("Максимальное значение "+max);
         System.out.println("Минимальное значение "+min);
 
-        for(int i=values1.length-1;i>0;i--){
+        for(int i=valuesDouble.length-1;i>0;i--){
             for(int j =0;j<i;j++ ){
-                if(values1[j]>values1[j+1]){
-                    Double temp = values1[j];
-                    values1[j]=values1[j+1];
-                    values1[j+1]=temp;
+                if(valuesDouble[j]>valuesDouble[j+1]){
+                    Double temp = valuesDouble[j];
+                    valuesDouble[j]=valuesDouble[j+1];
+                    valuesDouble[j+1]=temp;
                 }
             }
         }
         System.out.println("В порядке возрастания");
-        for (Double i:values1) {
+        for (Double i:valuesDouble) {
             System.out.print(i+" ");
             }
     }
